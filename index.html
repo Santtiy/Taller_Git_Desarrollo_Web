@@ -11,7 +11,10 @@
 </head>
 <body>
     <div class="header">
-        Requerimiento 1: Creación de la Página HTML 
+        <div class="header-content">
+            <span>Ficha de Referencia - Focas</span>
+            <button id="theme-toggle-btn" class="theme-button">🌙 Modo Oscuro</button>
+        </div>
     </div>
     
     <div class="container-main">
@@ -51,10 +54,6 @@
                     <span class="value">De 50 a 150 kilos</span>
                 </div>
             </div>
-            
-            <div class="image">
-                <img src="foca.jpeg" alt="Foca">
-            </div>
         </div>
         
         <div class="description">
@@ -64,45 +63,55 @@
         
         <div class="characteristics-section">
             <h2 class="section-title">Características principales</h2>
-            
-            <div class="characteristic">
-                <div class="characteristic-title">Hábitat</div>
-                <div class="characteristic-text">Viven principalmente en océanos fríos y templados, cerca de costas, islas, playas rocosas y zonas polares (como el Ártico y la Antártida).</div>
-            </div>
-            
-            <div class="characteristic">
-                <div class="characteristic-title">Alimentación</div>
-                <div class="characteristic-text">Son carnívoras. Se alimentan de peces, calamares, crustáceos y otros animales marinos pequeños.</div>
-            </div>
-            
-            <div class="characteristic">
-                <div class="characteristic-title">Comportamiento</div>
-                <div class="characteristic-text">Son animales sociables, muchas veces se agrupan en colonias. Pasan gran parte de su vida en el agua, pero descansan en tierra o hielo.</div>
-            </div>
-            
-            <div class="characteristic">
-                <div class="characteristic-title">Reproducción</div>
-                <div class="characteristic-text">Dan a luz en tierra firme o sobre hielo. Las crías dependen de la leche materna, que es muy rica en grasa para ayudarlas a sobrevivir.</div>
-            </div>
-            
-            <div class="characteristic">
-                <div class="characteristic-title">Adaptaciones físicas</div>
-                <div class="characteristic-text">Poseen una capa gruesa de grasa (grasa subcutánea) que las protege del frío. Además, pueden contener la respiración por varios minutos para bucear.</div>
-            </div>
-            
-            <div class="characteristic">
-                <div class="characteristic-title">Desplazamiento</div>
-                <div class="characteristic-text">En el agua nadan rápidamente usando sus aletas, pero en tierra se mueven arrastrándose o impulsándose con su cuerpo.</div>
-            </div>
-            
-            <div class="characteristic">
-                <div class="characteristic-title">Depredadores naturales</div>
-                <div class="characteristic-text">Sus principales depredadores son tiburones, orcas y osos polares (dependiendo de la región).</div>
+
+            <div class="characteristics-layout">
+                <div class="image characteristics-image">
+                    <img src="foca.jpeg" alt="Foca">
+                </div>
+
+                <div class="characteristics-list">
+                    <div class="characteristic">
+                        <div class="characteristic-title">Hábitat</div>
+                        <div class="characteristic-text">Viven principalmente en océanos fríos y templados, cerca de costas, islas, playas rocosas y zonas polares (como el Ártico y la Antártida).</div>
+                    </div>
+                    
+                    <div class="characteristic">
+                        <div class="characteristic-title">Alimentación</div>
+                        <div class="characteristic-text">Son carnívoras. Se alimentan de peces, calamares, crustáceos y otros animales marinos pequeños.</div>
+                    </div>
+                    
+                    <div class="characteristic">
+                        <div class="characteristic-title">Comportamiento</div>
+                        <div class="characteristic-text">Son animales sociables, muchas veces se agrupan en colonias. Pasan gran parte de su vida en el agua, pero descansan en tierra o hielo.</div>
+                    </div>
+                    
+                    <div class="characteristic">
+                        <div class="characteristic-title">Reproducción</div>
+                        <div class="characteristic-text">Dan a luz en tierra firme o sobre hielo. Las crías dependen de la leche materna, que es muy rica en grasa para ayudarlas a sobrevivir.</div>
+                    </div>
+                    
+                    <div class="characteristic">
+                        <div class="characteristic-title">Adaptaciones físicas</div>
+                        <div class="characteristic-text">Poseen una capa gruesa de grasa (grasa subcutánea) que las protege del frío. Además, pueden contener la respiración por varios minutos para bucear.</div>
+                    </div>
+                    
+                    <div class="characteristic">
+                        <div class="characteristic-title">Desplazamiento</div>
+                        <div class="characteristic-text">En el agua nadan rápidamente usando sus aletas, pero en tierra se mueven arrastrándose o impulsándose con su cuerpo.</div>
+                    </div>
+                    
+                    <div class="characteristic">
+                        <div class="characteristic-title">Depredadores naturales</div>
+                        <div class="characteristic-text">Sus principales depredadores son tiburones, orcas y osos polares (dependiendo de la región).</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     
     <!-- Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/bootstrap.bundle.min.js"></script>
+    <!-- Script personalizado para interactividad -->
+    <script src="script.js"></script>
 </body>
 </html>
