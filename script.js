@@ -67,6 +67,53 @@ function toggleExtraInfo(characteristicElement) {
 document.addEventListener('DOMContentLoaded', function() {
     // Cargar tema guardado
     loadSavedTheme();
+
+    function getExtraInfoHtml(title) {
+        const normalized = (title || '').trim().toLowerCase();
+
+        switch (normalized) {
+            case 'hábitat':
+                return `
+                    <p>Además de las costas, algunas focas usan estuarios y bahías protegidas para descansar y alimentarse.</p>
+                    <p><strong>Dato extra:</strong> suelen elegir zonas con acceso fácil al agua para escapar rápido ante amenazas.</p>
+                `;
+            case 'alimentación':
+                return `
+                    <p>Su dieta varía según la región y la disponibilidad de presas, por eso pueden cambiar lo que comen a lo largo del año.</p>
+                    <p><strong>Dato extra:</strong> muchas especies cazan bajo el agua usando vibrisas (bigotes) muy sensibles para detectar movimientos.</p>
+                `;
+            case 'comportamiento':
+                return `
+                    <p>En el agua pueden pasar largos periodos nadando y buceando, y en tierra descansan para conservar energía.</p>
+                    <p><strong>Dato extra:</strong> suelen ser más activas al amanecer o atardecer, cuando algunas presas están más disponibles.</p>
+                `;
+            case 'reproducción':
+                return `
+                    <p>El cuidado de las crías es intenso durante las primeras semanas, cuando necesitan ganar peso rápidamente.</p>
+                    <p><strong>Dato extra:</strong> la lactancia suele ser corta pero muy eficiente por la alta energía de la leche.</p>
+                `;
+            case 'adaptaciones físicas':
+                return `
+                    <p>Su cuerpo es hidrodinámico y reduce la resistencia al nadar, lo que mejora su eficiencia en el agua.</p>
+                    <p><strong>Dato extra:</strong> sus ojos y bigotes están adaptados para orientarse incluso con poca luz o agua turbia.</p>
+                `;
+            case 'desplazamiento':
+                return `
+                    <p>En tierra su movilidad es limitada, por eso suelen permanecer cerca del agua cuando descansan.</p>
+                    <p><strong>Dato extra:</strong> bajo el agua pueden cambiar de dirección con rapidez usando sus aletas como timón.</p>
+                `;
+            case 'depredadores naturales':
+                return `
+                    <p>La presión de depredación puede influir en dónde descansan y en el tamaño de las colonias.</p>
+                    <p><strong>Dato extra:</strong> en algunas zonas también enfrentan riesgos por actividades humanas (redes, contaminación y perturbación).</p>
+                `;
+            default:
+                return `
+                    <p>Información adicional para ampliar esta característica.</p>
+                    <p><strong>Dato extra:</strong> las focas son excelentes buceadoras y pueden ajustar su comportamiento según el entorno.</p>
+                `;
+        }
+    }
     
     // Agregar event listeners a los botones de toggle de información
     const characteristics = document.querySelectorAll('.characteristic');
@@ -81,7 +128,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const extraInfo = document.createElement('div');
         extraInfo.className = 'extra-info';
         extraInfo.style.display = 'none';
-        extraInfo.innerHTML = `<p>Información adicional sobre esta característica. Haz clic en "Mostrar más" para aprender detalles interesantes.</p>`;
+        const titleEl = characteristic.querySelector('.characteristic-title');
+        const titleText = titleEl ? titleEl.textContent : '';
+        extraInfo.innerHTML = getExtraInfoHtml(titleText);
         
         // Insertar el botón y la info extra
         characteristic.appendChild(toggleBtn);
