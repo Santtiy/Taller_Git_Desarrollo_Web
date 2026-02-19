@@ -401,3 +401,216 @@ body {
         color: black;
     }
 }
+
+/* ========== REQUERIMIENTO 5: ESTILOS PARA JAVASCRIPT ========== */
+
+/* Estilos para el Header mejorado */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+}
+
+/* Botón de cambio de tema */
+.theme-button {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.theme-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.theme-button:active {
+    transform: scale(0.95);
+}
+
+/* Tema Oscuro */
+body[data-theme="dark"] {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+body[data-theme="dark"] .container-main {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+}
+
+body[data-theme="dark"] .header {
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+}
+
+body[data-theme="dark"] .credit {
+    background-color: #1f1f1f;
+    color: #999;
+    border-bottom-color: #444;
+}
+
+body[data-theme="dark"] .info-row {
+    border-bottom-color: #444;
+    color: #e0e0e0;
+}
+
+body[data-theme="dark"] .label {
+    color: #b0b0b0;
+}
+
+body[data-theme="dark"] .value {
+    color: #e0e0e0;
+}
+
+body[data-theme="dark"] .description {
+    background: linear-gradient(135deg, #1f1f1f 0%, #2a2a2a 100%);
+    border-top-color: #444;
+    color: #d0d0d0;
+}
+
+body[data-theme="dark"] .description p {
+    color: #d0d0d0;
+}
+
+body[data-theme="dark"] .characteristics-section {
+    background-color: #2a2a2a;
+}
+
+body[data-theme="dark"] .section-title {
+    color: #e0e0e0;
+    border-bottom-color: #0066cc;
+}
+
+body[data-theme="dark"] .section-title::before {
+    background: linear-gradient(90deg, #0066cc, #0088ff);
+}
+
+body[data-theme="dark"] .characteristic {
+    border-bottom-color: #444;
+}
+
+body[data-theme="dark"] .characteristic:hover {
+    border-left-color: #0066cc;
+    background-color: #333;
+}
+
+body[data-theme="dark"] .characteristic-title {
+    color: #e0e0e0;
+}
+
+body[data-theme="dark"] .characteristic-text {
+    color: #bbb;
+}
+
+body[data-theme="dark"] .toggle-btn {
+    background: #0066cc;
+    color: white;
+    border: none;
+}
+
+body[data-theme="dark"] .toggle-btn:hover {
+    background: #0088ff;
+}
+
+body[data-theme="dark"] .extra-info {
+    background: #333;
+    border-left: 3px solid #0066cc;
+    color: #d0d0d0;
+}
+
+/* Botones de toggle para mostrar/ocultar información */
+.toggle-btn {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 8px 16px;
+    background-color: #f0f0f0;
+    color: #333;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.toggle-btn:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.toggle-btn:active {
+    transform: translateY(0);
+}
+
+.toggle-btn.active {
+    background-color: #0066cc;
+    color: white;
+}
+
+/* Contenedor de información extra */
+.extra-info {
+    margin-top: 12px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-left: 3px solid #0066cc;
+    border-radius: 4px;
+    animation: slideDown 0.3s ease;
+    line-height: 1.6;
+    font-size: 14px;
+    color: #555;
+}
+
+.extra-info.show {
+    animation: slideDown 0.3s ease;
+}
+
+/* Animación de deslizamiento */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+        max-height: 0;
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        max-height: 500px;
+    }
+}
+
+/* Responsividad para el header mejorado */
+@media (max-width: 767px) {
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .theme-button {
+        width: 100%;
+        padding: 10px;
+        font-size: 13px;
+    }
+}
+
+/* Mejora de accesibilidad para tema oscuro */
+@media (prefers-color-scheme: dark) {
+    /* El navegador prefiere tema oscuro, pero respetamos la elección del usuario */
+    body:not([data-theme]) {
+        filter: none;
+    }
+}
+
